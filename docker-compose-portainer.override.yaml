@@ -1,0 +1,10 @@
+services:
+  nagios:
+    container_name: nagios
+    volumes: !override
+      - nagios_etc:/opt/nagios/etc
+      - nagios_var:/opt/nagios/var
+
+volumes:
+  nagios_etc:
+  nagios_var:
