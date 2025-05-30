@@ -1,7 +1,6 @@
 version: '3.8'
 services:
   nagios:
-    container_name: nagios
     volumes: !override
       - nagios_etc:/opt/nagios/etc
       - nagios_var:/opt/nagios/var
