@@ -4,6 +4,8 @@ services:
     volumes: !override
       - nagios_etc:/opt/nagios/etc
       - nagios_var:/opt/nagios/var
+    environment:
+      NAGIOSADMIN_USER: "nagiosadmin"
 
 volumes:
   nagios_etc:
