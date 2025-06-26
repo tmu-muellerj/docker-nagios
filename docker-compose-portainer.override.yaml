@@ -1,6 +1,13 @@
 version: '3.8'
 services:
   nagios:
+    build:
+      context: .
+      dockerfile: Dockerfile_TMU
+      platforms:
+        - linux/amd64
+      tags:
+        - tmumuellerj/docker-nagios:tmu
     volumes: !override
       - nagios_etc:/opt/nagios/etc
       - nagios_var:/opt/nagios/var
