@@ -1,0 +1,4 @@
+# https://github.com/tmu-muellerj/docker-nagios/blob/master/Dockerfile
+FROM manios/nagios:latest
+
+RUN apk add --no-cache apache2-ldap
