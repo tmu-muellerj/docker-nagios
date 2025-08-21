@@ -24,3 +24,4 @@ volumes:
   nagios_ssh:
   nagios_confd:
   myCertificates:
+    external: true
