@@ -3,11 +3,13 @@ FROM manios/nagios:latest
 
 #RUN apk add --no-cache apache2-ldap
 
+ENV NAGIOS_CMDGROUP=nagios
+
 RUN apk update && \
     apk upgrade --no-cache openssl openssl-dev && \
     apk add --no-cache apache2-ssl && \
     mkdir -p /var/cache/apache2 &&/
-    chown ${NAGIOS_USER}:${NAGIOS_CMDGROUP} /var/cache/apache2
+    chown apache:${NAGIOS_CMDGROUP} /var/cache/apache2
 
 # Add edge repositories for consistent dependency resolution
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main"      >> /etc/apk/repositories && \
