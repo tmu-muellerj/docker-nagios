@@ -13,6 +13,7 @@ services:
       - nagios_etc:/opt/nagios/etc
       - nagios_var:/opt/nagios/var
       - nagios_ssh:/home/nagios/.ssh
+      - nagios_confd:/etc/apache2/conf.d
     environment:
       NAGIOSADMIN_USER: "nagiosadmin"
 
@@ -20,3 +21,4 @@ volumes:
   nagios_etc:
   nagios_var:
   nagios_ssh:
+  nagios_confd:
