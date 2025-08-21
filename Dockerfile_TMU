@@ -3,7 +3,9 @@ FROM manios/nagios:latest
 
 RUN apk add --no-cache apache2-ldap
 
-RUN apk add --no-cache apache2-ssl
+RUN apk update && \
+    apk upgrade --no-cache openssl openssl-dev && \
+    apk add --no-cache apache2-ssl
 
 # Add edge repositories for consistent dependency resolution
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/main"      >> /etc/apk/repositories && \
