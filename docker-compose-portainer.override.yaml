@@ -14,6 +14,7 @@ services:
       - nagios_var:/opt/nagios/var
       - nagios_ssh:/home/nagios/.ssh
       - nagios_confd:/etc/apache2/conf.d
+      - myCertificates:/etc/apache2/ssl
     environment:
       NAGIOSADMIN_USER: "nagiosadmin"
 
@@ -22,3 +23,4 @@ volumes:
   nagios_var:
   nagios_ssh:
   nagios_confd:
+  myCertificates:
