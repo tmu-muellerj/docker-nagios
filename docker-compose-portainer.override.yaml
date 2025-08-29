@@ -16,8 +16,16 @@ services:
       - nagios_confd:/etc/apache2/conf.d
       - nagios_log:/var/log/apache2
       - myCertificates:/etc/apache2/ssl
+    dns:
+      - ${DNS_SERVER1}
+      - ${DNS_SERVER2}
+    dns_search:
+      - ${DNS_SEARCH_DOMAIN}
     environment:
-      NAGIOSADMIN_USER: "nagiosadmin"
+      - DNS_SERVER1=${DNS_SERVER1}
+      - DNS_SERVER2=${DNS_SERVER2}
+      - DNS_SEARCH_DOMAIN=${DNS_SEARCH_DOMAIN}
+      - NAGIOSADMIN_USER=nagiosadmin
 
 volumes:
   nagios_etc:
